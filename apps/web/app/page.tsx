@@ -1,9 +1,13 @@
 import { trpc } from '@web/app/trpc';
-import ClientSide from './components/ClientSide';
+import ClientSide from './ClientSide';
 
 export default async function Home() {
   const { greeting } = await trpc.hello.query({ name: 'Tom' });
   return (
-    <><div>{greeting}</div><br /><ClientSide /></>
+    <div>
+      <p>server side - {greeting}</p>
+      
+      <ClientSide />
+    </div>
   ) ;
 }
