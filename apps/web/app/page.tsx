@@ -2,10 +2,10 @@ import { trpc } from '@web/app/trpc';
 import ClientSide from './ClientSide';
 
 export default async function Home() {
-  const { greeting } = await trpc.hello.query({ name: 'Tom' });
+  const response = await trpc.hello.query({});
   return (
     <div>
-      <p>server side - {greeting}</p>
+      <p>server side - {response}</p>
       
       <ClientSide />
     </div>
