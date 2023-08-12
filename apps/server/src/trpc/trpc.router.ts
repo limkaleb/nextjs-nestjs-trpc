@@ -18,11 +18,7 @@ export class TrpcRouter {
         }),
       )
       .query(({ input }) => {
-        const { name } = input;
-        // return await this.userService.getUsers(name);
-        return {
-          greeting: `Hello ${name ? name : `Bob`}`,
-        };
+        return `Hello ${input.name ? input.name : `Lebo`}`;
       }),
   });
 

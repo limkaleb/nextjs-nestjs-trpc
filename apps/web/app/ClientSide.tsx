@@ -8,7 +8,7 @@ export default function ClientSide() {
   useEffect(() => {
     trpc.hello
       .query({})
-      .then(({ greeting }) => setGreeting(greeting));
+      .then((response) => setGreeting(response));
   }, []);
   return <p>I am client side: {greeting}</p>;
 }
